@@ -243,6 +243,7 @@ def correlation_plot():
 
 # Inicializar la aplicación Dash
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+app.config.suppress_callback_exceptions = True
 server = app.server
 
 # Layout del dashboard
@@ -276,7 +277,7 @@ def render_content(tab):
             dbc.Row([
                 dbc.Col(dbc.Card([html.H5("Precio Promedio de Alquiler"), html.P("$1,416.75 USD")], body=True)),
                 dbc.Col(dbc.Card([html.H5("Mediana del Precio de Alquiler"), html.P("$1,259 USD")], body=True)),
-                dbc.Col(dbc.Card([html.H5("Máximos y Mínimos"), html.P("$200 USD - $5,350 USD")], body=True)),
+                dbc.Col(dbc.Card([html.H5("Mínimo Y Máximo"), html.P("$200 USD - $5,350 USD")], body=True)),
             ]),
             html.H4("Precio Promedio por Estado"),
             #dcc.Graph(figure=fig),
