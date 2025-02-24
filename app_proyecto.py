@@ -24,7 +24,7 @@ import dash
 from dash import dcc, html, Input, Output, callback_context, State, ALL
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-import folium
+#import folium
 
 df =pd.DataFrame(pd.read_excel(r"datos_apartamentos_rent_modelos.xlsx"))
 #df_mapa =pd.DataFrame(pd.read_excel(r"datos_apartamentos_rent_actualizado.xlsx"))
