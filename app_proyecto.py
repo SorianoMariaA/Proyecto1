@@ -279,7 +279,7 @@ def render_content(tab):
                 dbc.Col(dbc.Card([html.H5("Mediana del Precio de Alquiler"), html.P("$1,259 USD")], body=True)),
                 dbc.Col(dbc.Card([html.H5("Mínimo Y Máximo"), html.P("$200 USD - $5,350 USD")], body=True)),
             ]),
-            html.H4("Precio Promedio por Estado"),
+            html.H4("Precio Promedio de Alquiler Mensual por Estado"),
             #dcc.Graph(figure=fig),
             html.Iframe(srcDoc=open('mapa.html', 'r').read(), width='100%', height='600')
             #dcc.Graph(figure=px.box(df_final, x='state', y='price', title="Distribución de Precios por Estado")),
@@ -580,7 +580,7 @@ def pobar_modelos(n_clicks, model_type, selected_variables, input_values):
         r2 = r2_score(y_test, y_pred)
         nuevaPred = model.predict(list_pred.insert(0,1))
         return html.Div([
-            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD"),
+            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD por mes."),
             html.H3(f"Coeficiente de determinación (R²): {r2:.2f}")
         ])
     
@@ -595,7 +595,7 @@ def pobar_modelos(n_clicks, model_type, selected_variables, input_values):
         nuevaPred = knn.predict(prediccion_scaled)
         r2 = r2_score(y_test, y_pred)
         return html.Div([
-            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD"),
+            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD por mes."),
             html.H3(f"Coeficiente de determinación (R²): {r2:.2f}")
         ])
 
@@ -610,7 +610,7 @@ def pobar_modelos(n_clicks, model_type, selected_variables, input_values):
         nuevaPred = svr.predict(prediccion_scaled)
         r2 = r2_score(y_test, y_pred)
         return html.Div([
-            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD"),
+            html.H3(f"El precio estimado de alquiler es: ${nuevaPred[0]:,.2f} USD por mes."),
             html.H3(f"Coeficiente de determinación (R²): {r2:.2f}")
         ])
 
